@@ -1,0 +1,37 @@
+```haskell
+data Candidate = Candidate {
+   value :: Integer
+  ,isPrime :: Bool
+  ,multiplesChecked :: Bool
+} deriving Show
+
+mkCandidates num = Map.fromList lst
+  where lst = map (\x -> (x,Candidate {
+                                        value = x
+                                      , isPrime = x == 2
+                                      , multiplesChecked = x == 2
+                                      })) [2..(2*num)]
+```
+
+```haskell
+[(2,Candidate {value = 2, isPrime = True, multiplesChecked = True}),
+ (3,Candidate {value = 3, isPrime = False, multiplesChecked = True}),
+ (4,Candidate {value = 4, isPrime = False, multiplesChecked = True}),
+ ...
+ (26,Candidate {value = 26, isPrime = False, multiplesChecked = True})
+]
+```
+[4,6,8,10,12,14]
+```haskell
+[
+    (2,Candidate {value = 2, isPrime = True, multiplesChecked = True}),
+    (3,Candidate {value = 3, isPrime = True, multiplesChecked = False}),
+    (4,Candidate {value = 4, isPrime = True, multiplesChecked = False}),
+    (5,Candidate {value = 5, isPrime = True, multiplesChecked = False}),
+    (6,Candidate {value = 6, isPrime = True, multiplesChecked = False}),
+    (7,Candidate {value = 7, isPrime = True, multiplesChecked = False}),
+    (8,Candidate {value = 8, isPrime = True, multiplesChecked = False}),
+    (9,Candidate {value = 9, isPrime = True, multiplesChecked = False}),
+    (10,Candidate {value = 10, isPrime = True, multiplesChecked = False}),
+    (11,Candidate {value = 11, isPrime = True, multiplesChecked = False}),
+    (12,Candidate {value = 12, isPrime = True, multiplesChecked = False}),(13,Candidate {value = 13, isPrime = True, multiplesChecked = False}),(14,Candidate {value = 14, isPrime = True, multiplesChecked = False}),(15,Candidate {value = 15, isPrime = True, multiplesChecked = False}),(16,Candidate {value = 16, isPrime = True, multiplesChecked = False}),(17,Candidate {value = 17, isPrime = True, multiplesChecked = False}),(18,Candidate {value = 18, isPrime = True, multiplesChecked = False}),(19,Candidate {value = 19, isPrime = True, multiplesChecked = False}),(20,Candidate {value = 20, isPrime = True, multiplesChecked = False}),(21,Candidate {value = 21, isPrime = True, multiplesChecked = False}),(22,Candidate {value = 22, isPrime = True, multiplesChecked = False}),(23,Candidate {value = 23, isPrime = True, multiplesChecked = False}),(24,Candidate {value = 24, isPrime = True, multiplesChecked = False}),(25,Candidate {value = 25, isPrime = True, multiplesChecked = False}),(26,Candidate {value = 26, isPrime = True, multiplesChecked = False})],fromList [(2,Candidate {value = 2, isPrime = True, multiplesChecked = True}),(3,Candidate {value = 3, isPrime = True, multiplesChecked = False}),(4,Candidate {value = 4, isPrime = True, multiplesChecked = False}),(5,Candidate {value = 5, isPrime = True, multiplesChecked = False}),(6,Candidate {value = 6, isPrime = True, multiplesChecked = False}),(7,Candidate {value = 7, isPrime = True, multiplesChecked = False}),(8,Candidate {value = 8, isPrime = True, multiplesChecked = False}),(9,Candidate {value = 9, isPrime = True, multiplesChecked = False}),(10,Candidate {value = 10, isPrime = True, multiplesChecked = False}),(11,Candidate {value = 11, isPrime = True, multiplesChecked = False}),(12,Candidate {value = 12, isPrime = True, multiplesChecked = False}),(13,Candidate {value = 13, isPrime = True, multiplesChecked = False}),(14,Candidate {value = 14, isPrime = True, multiplesChecked = False}),(15,Candidate {value = 15, isPrime = True, multiplesChecked = False}),(16,Candidate {value = 16, isPrime = True, multiplesChecked = False}),(17,Candidate {value = 17, isPrime = True, multiplesChecked = False}),(18,Candidate {value = 18, isPrime = True, multiplesChecked = False}),(19,Candidate {value = 19, isPrime = True, multiplesChecked = False}),(20,Candidate {value = 20, isPrime = True, multiplesChecked = False}),(21,Candidate {value = 21, isPrime = True, multiplesChecked = False}),(22,Candidate {value = 22, isPrime = True, multiplesChecked = False}),(23,Candidate {value = 23, isPrime = True, multiplesChecked = False}),(24,Candidate {value = 24, isPrime = True, multiplesChecked = False}),(25,Candidate {value = 25, isPrime = True, multiplesChecked = False}),(26,Candidate {value = 26, isPrime = True, multiplesChecked = False})],fromList [(2,Candidate {value = 2, isPrime = True, multiplesChecked = True}),(3,Candidate {value = 3, isPrime = True, multiplesChecked = False}),(4,Candidate {value = 4, isPrime = True, multiplesChecked = False}),(5,Candidate {value = 5, isPrime = True, multiplesChecked = False}),(6,Candidate {value = 6, isPrime = True, multiplesChecked = False}),(7,Candidate {value = 7, isPrime = True, multiplesChecked = False}),(8,Candidate {value = 8, isPrime = True, multiplesChecked = False}),(9,Candidate {value = 9, isPrime = True, multiplesChecked = False}),(10,Candidate {value = 10, isPrime = True, multiplesChecked = False}),(11,Candidate {value = 11, isPrime = True, multiplesChecked = False}),(12,Candidate {value = 12, isPrime = True, multiplesChecked = False}),(13,Candidate {value = 13, isPrime = True, multiplesChecked = False}),(14,Candidate {value = 14, isPrime = True, multiplesChecked = False}),(15,Candidate {value = 15, isPrime = True, multiplesChecked = False}),(16,Candidate {value = 16, isPrime = True, multiplesChecked = False}),(17,Candidate {value = 17, isPrime = True, multiplesChecked = False}),(18,Candidate {value = 18, isPrime = True, multiplesChecked = False}),(19,Candidate {value = 19, isPrime = True, multiplesChecked = False}),(20,Candidate {value = 20, isPrime = True, multiplesChecked = False}),(21,Candidate {value = 21, isPrime = True, multiplesChecked = False}),(22,Candidate {value = 22, isPrime = True, multiplesChecked = False}),(23,Candidate {value = 23, isPrime = True, multiplesChecked = False}),(24,Candidate {value = 24, isPrime = True, multiplesChecked = False}),(25,Candidate {value = 25, isPrime = True, multiplesChecked = False}),(26,Candidate {value = 26, isPrime = True, multiplesChecked = False})],fromList [(2,Candidate {value = 2, isPrime = True, multiplesChecked = True}),(3,Candidate {value = 3, isPrime = True, multiplesChecked = False}),(4,Candidate {value = 4, isPrime = True, multiplesChecked = False}),(5,Candidate {value = 5, isPrime = True, multiplesChecked = False}),(6,Candidate {value = 6, isPrime = True, multiplesChecked = False}),(7,Candidate {value = 7, isPrime = True, multiplesChecked = False}),(8,Candidate {value = 8, isPrime = True, multiplesChecked = False}),(9,Candidate {value = 9, isPrime = True, multiplesChecked = False}),(10,Candidate {value = 10, isPrime = True, multiplesChecked = False}),(11,Candidate {value = 11, isPrime = True, multiplesChecked = False}),(12,Candidate {value = 12, isPrime = True, multiplesChecked = False}),(13,Candidate {value = 13, isPrime = True, multiplesChecked = False}),(14,Candidate {value = 14, isPrime = True, multiplesChecked = False}),(15,Candidate {value = 15, isPrime = True, multiplesChecked = False}),(16,Candidate {value = 16, isPrime = True, multiplesChecked = False}),(17,Candidate {value = 17, isPrime = True, multiplesChecked = False}),(18,Candidate {value = 18, isPrime = True, multiplesChecked = False}),
